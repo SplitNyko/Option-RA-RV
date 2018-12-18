@@ -10,8 +10,7 @@ public class TvRemote : MonoBehaviour {
     public GameObject video;
 
     private VideoPlayer videoPlayer;
-    private RaycastHit hit;
-    private Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
      
     // Use this for initialization
     void Start () {
@@ -22,6 +21,8 @@ public class TvRemote : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     { 
+    RaycastHit hit;
+    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray,out hit, rayLength, layermask))
             {
             //Debug.Log(hit.collider);
